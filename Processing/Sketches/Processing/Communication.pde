@@ -1,7 +1,7 @@
 /*
  * File       Communiction class for Freenove Quadruped Robot
  * Author     Ethan Pan @ Freenove (support@freenove.com)
- * Date       2017/4/23
+ * Date       2017/05/18
  * Copyright  Copyright © Freenove (http://www.freenove.com)
  * License    Creative Commons Attribution ShareAlike 3.0
  *            (http://creativecommons.org/licenses/by-sa/3.0/legalcode)
@@ -30,9 +30,9 @@ class Communication {
         SerialWrite(outData);
         inData = SerialRead();
         if (inData != null) {
-          if (inData[0] == Command.commandDone) {
+          if (inData[0] == Orders.orderDone) {
             return true;
-          } else if (inData[0] == Command.commandStart) {
+          } else if (inData[0] == Orders.orderStart) {
             WaitCommandDone();
             return true;
           }
@@ -41,13 +41,13 @@ class Communication {
       if (isClientAvailable) {
         client.clear();
         ClientWrite(outData);
-        if(outData[0] == Command.requestMoveBodyTo || outData[0] == Command.requestRotateBodyTo)
+        if(outData[0] == Orders.requestMoveBodyTo || outData[0] == Orders.requestRotateBodyTo)
           return true;
         inData = ClientRead();
         if (inData != null) {
-          if (inData[0] == Command.commandDone) {
+          if (inData[0] == Orders.orderDone) {
             return true;
-          } else if (inData[0] == Command.commandStart) {
+          } else if (inData[0] == Orders.orderStart) {
             WaitCommandDone();
             return true;
           }
@@ -64,13 +64,13 @@ class Communication {
     if (isSerialAvailable) {
       data = SerialRead();
       if (data != null)
-        if (data[0] == Command.commandDone)
+        if (data[0] == Orders.orderDone)
           return true;
     }
     if (isClientAvailable) {
       data = ClientRead();
       if (data != null)
-        if (data[0] == Command.commandDone)
+        if (data[0] == Orders.orderDone)
           return true;
     }
     return false;
@@ -102,10 +102,10 @@ class Communication {
 
   private void ClientWrite(byte[] data) {
     byte[] dataWrite = new byte[data.length + 2];
-    dataWrite[0] = Command.transStart;
+    dataWrite[0] = Orders.transStart;
     for (int i = 0; i < data.length; i++)
       dataWrite[i+1] = data[i];
-    dataWrite[data.length + 1] = Command.transEnd;
+    dataWrite[data.length + 1] = Orders.transEnd;
     client.write(dataWrite);
   }
 
@@ -120,11 +120,11 @@ class Communication {
         client.readBytes(inTemp);
         byte inByte = inTemp[0];
 
-        if (inByte == Command.transStart)
+        if (inByte == Orders.transStart)
           inDataNum = 0;
         inData[inDataNum++] = inByte;
-        if (inByte == Command.transEnd)
-          if (inData[0] == Command.transStart)
+        if (inByte == Orders.transEnd)
+          if (inData[0] == Orders.transStart)
             break;
         startTime = millis();
       }
@@ -135,7 +135,7 @@ class Communication {
       delay(2);
     } 
 
-    if (inData[0] == Command.transStart && inData[inDataNum - 1] == Command.transEnd) {
+    if (inData[0] == Orders.transStart && inData[inDataNum - 1] == Orders.transEnd) {
       byte[] data = new byte[inDataNum - 2];
       for (int i = 0; i < inDataNum - 2; i++)
         data[i] = inData[i + 1];
@@ -176,11 +176,11 @@ class Communication {
         serial = new Serial(parent, serialNames[i], 115200);
         serial.clear();
         delay(1600);
-        SerialWrite(serial, new byte[]{Command.requestEcho});
+        SerialWrite(serial, new byte[]{Orders.requestEcho});
         readTimeout = 400;
         byte[] data = SerialRead(serial);
         if (data != null) {
-          if (data[0] == Command.echo) {
+          if (data[0] == Orders.echo) {
             serialName = serialNames[i];
             println(Time() + "Serial connection success: " + this.serialName);
             isSerialAvailable = true;
@@ -218,10 +218,10 @@ class Communication {
 
   private void SerialWrite(Serial serial, byte[] data) {
     byte[] dataWrite = new byte[data.length + 2];
-    dataWrite[0] = Command.transStart;
+    dataWrite[0] = Orders.transStart;
     for (int i = 0; i < data.length; i++)
       dataWrite[i+1] = data[i];
-    dataWrite[data.length + 1] = Command.transEnd;
+    dataWrite[data.length + 1] = Orders.transEnd;
     serial.write(dataWrite);
   }
 
@@ -236,11 +236,11 @@ class Communication {
         serial.readBytes(inTemp);
         byte inByte = inTemp[0];
 
-        if (inByte == Command.transStart)
+        if (inByte == Orders.transStart)
           inDataNum = 0;
         inData[inDataNum++] = inByte;
-        if (inByte == Command.transEnd)
-          if (inData[0] == Command.transStart)
+        if (inByte == Orders.transEnd)
+          if (inData[0] == Orders.transStart)
             break;
         startTime = millis();
       }
@@ -251,7 +251,7 @@ class Communication {
       delay(2);
     } 
 
-    if (inData[0] == Command.transStart && inData[inDataNum - 1] == Command.transEnd) {
+    if (inData[0] == Orders.transStart && inData[inDataNum - 1] == Orders.transEnd) {
       byte[] data = new byte[inDataNum - 2];
       for (int i = 0; i < inDataNum - 2; i++)
         data[i] = inData[i + 1];

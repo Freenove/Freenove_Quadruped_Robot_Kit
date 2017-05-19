@@ -1,7 +1,7 @@
 /*
  * File       Control class for Freenove Quadruped Robot
  * Author     Ethan Pan @ Freenove (support@freenove.com)
- * Date       2017/4/22
+ * Date       2017/05/18
  * Copyright  Copyright © Freenove (http://www.freenove.com)
  * License    Creative Commons Attribution ShareAlike 3.0
  *            (http://creativecommons.org/licenses/by-sa/3.0/legalcode)
@@ -16,7 +16,7 @@ class ControlRobot {
 
   public void MoveLeg(int leg, int dx, int dy, int dz) {
     communication.SendCommand(
-      new byte[]{Command.requestMoveLeg, 
+      new byte[]{Orders.requestMoveLeg, 
       (byte)(leg), 
       (byte)(64 + dx), 
       (byte)(64 + dy), 
@@ -24,63 +24,63 @@ class ControlRobot {
   }
 
   public void Calibrate() {
-    communication.SendCommand(new byte[]{Command.requestCalibrate});
+    communication.SendCommand(new byte[]{Orders.requestCalibrate});
   }
 
   public void ChangeIO(int IO, boolean status) {
     communication.SendCommand(
-      new byte[]{Command.requestChangeIO, 
+      new byte[]{Orders.requestChangeIO, 
       (byte)IO, 
       (byte)(status ? 1 : 0)});
   }
 
   public void CrawlForward() {
-    communication.SendCommand(new byte[]{Command.requestCrawlForward});
+    communication.SendCommand(new byte[]{Orders.requestCrawlForward});
   }
 
   public void CrawlBackward() {
-    communication.SendCommand(new byte[]{Command.requestCrawlBackward});
+    communication.SendCommand(new byte[]{Orders.requestCrawlBackward});
   }
 
   public void TurnLeft() {
-    communication.SendCommand(new byte[]{Command.requestTurnLeft});
+    communication.SendCommand(new byte[]{Orders.requestTurnLeft});
   }
 
   public void TurnRight() {
-    communication.SendCommand(new byte[]{Command.requestTurnRight});
+    communication.SendCommand(new byte[]{Orders.requestTurnRight});
   }
 
   public void ActiveMode() {
-    communication.SendCommand(new byte[]{Command.requestActiveMode});
+    communication.SendCommand(new byte[]{Orders.requestActiveMode});
   }
 
   public void SwitchMode() {
-    communication.SendCommand(new byte[]{Command.requestSwitchMode});
+    communication.SendCommand(new byte[]{Orders.requestSwitchMode});
   }
 
   public void SleepMode() {
-    communication.SendCommand(new byte[]{Command.requestSleepMode});
+    communication.SendCommand(new byte[]{Orders.requestSleepMode});
   }
 
   public void InstallState() {
-    communication.SendCommand(new byte[]{Command.requestInstallState});
+    communication.SendCommand(new byte[]{Orders.requestInstallState});
   }
 
   public void CalibrateState() {
-    communication.SendCommand(new byte[]{Command.requestCalibrateState});
+    communication.SendCommand(new byte[]{Orders.requestCalibrateState});
   }
 
   public void BootState() {
-    communication.SendCommand(new byte[]{Command.requestBootState});
+    communication.SendCommand(new byte[]{Orders.requestBootState});
   }
 
   public void CalibrateVerify() {
-    communication.SendCommand(new byte[]{Command.requestCalibrateVerify});
+    communication.SendCommand(new byte[]{Orders.requestCalibrateVerify});
   }
 
   public void MoveBody(int x, int y, int z) {
     communication.SendCommand(
-      new byte[]{Command.requestMoveBodyTo, 
+      new byte[]{Orders.requestMoveBodyTo, 
       (byte)(64 + x), 
       (byte)(64 + y), 
       (byte)(64 + z)});
@@ -88,7 +88,7 @@ class ControlRobot {
 
   public void RotateBody(int x, int y) {
     communication.SendCommand(
-      new byte[]{Command.requestRotateBodyTo, 
+      new byte[]{Orders.requestRotateBodyTo, 
       (byte)(64 + x), 
       (byte)(64 + y)});
   }
