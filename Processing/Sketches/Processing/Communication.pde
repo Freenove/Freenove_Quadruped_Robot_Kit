@@ -1,7 +1,7 @@
 /*
  * File       Communiction class for Freenove Quadruped Robot
  * Author     Ethan Pan @ Freenove (support@freenove.com)
- * Date       2017/06/22
+ * Date       2017/06/24
  * Copyright  Copyright © Freenove (http://www.freenove.com)
  * License    Creative Commons Attribution ShareAlike 3.0
  *            (http://creativecommons.org/licenses/by-sa/3.0/legalcode)
@@ -17,14 +17,14 @@ class Communication {
     parent = pApplet;
   }
 
-  private int readTimeout = 400;
+  private int readTimeout = 500;
   private final int maxSendTimes = 3;
 
   public boolean SendCommand(byte[] outData) {
     byte[] inData;
 
     for (int i = 0; i < maxSendTimes; i++) {
-      readTimeout = 400;
+      readTimeout = 500;
       if (isSerialAvailable) {
         serial.clear();
         SerialWrite(outData);
@@ -175,9 +175,9 @@ class Communication {
       try {
         serial = new Serial(parent, serialNames[i], 115200);
         serial.clear();
-        delay(1600);
+        delay(1700);
         SerialWrite(serial, new byte[]{Orders.requestEcho});
-        readTimeout = 400;
+        readTimeout = 500;
         byte[] data = SerialRead(serial);
         if (data != null) {
           if (data[0] == Orders.echo) {
