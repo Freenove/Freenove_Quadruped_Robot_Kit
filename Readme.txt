@@ -8,6 +8,7 @@ Files
   The files for this product and their introduction are as follows:
     Arduino                 Sketches and libraries for Arduino
     Processing              Sketches and libraries for Processing
+    AboutBattery.pdf        Notes about battery
     CalibrationGraph.pdf    Calibration graph
     Readme.txt              Instructions
     Tutorial.pdf            Tutorial
