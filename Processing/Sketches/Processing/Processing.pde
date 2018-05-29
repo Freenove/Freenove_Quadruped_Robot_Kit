@@ -4,7 +4,7 @@
  *            To use Serial, the robot should connect to the device run this sketch.
  *            To use WIFI, the device run this sketch should connect to the WIFI of the robot.
  * Author     Ethan Pan @ Freenove (support@freenove.com)
- * Date       2017/05/18
+ * Date       2018/03/27
  * Copyright  Copyright © Freenove (http://www.freenove.com)
  * License    Creative Commons Attribution ShareAlike 3.0
  *            (http://creativecommons.org/licenses/by-sa/3.0/legalcode)
@@ -17,6 +17,7 @@ import controlP5.*;
 ControlP5 cp5;
 PFont font;
 Textlabel textlabelInfo;
+Textlabel textlabelVoltage;
 Slider2D slider2dMove;
 Slider2D slider2dRotate;
 // images for gui
@@ -34,6 +35,8 @@ final int tabHeight = 24;
 // event
 int eventId = 0;
 boolean isProcessEvent = false;
+// voltage
+int lastGetVoltage = 0;
 
 void setup() {
   size(800, 600);
@@ -70,7 +73,16 @@ void draw() {
     image(pImageRotateBody, 0, tabHeight + globalTapHeight);
   }
 
+  getVoltage();
   processEvent();
+}
+
+void getVoltage() {
+  if (millis() - lastGetVoltage > 1500) {
+    float voltage = controlRobot.GetVoltage();
+    textlabelVoltage.setText(String.valueOf(voltage) + "V");
+    lastGetVoltage = millis();
+  }
 }
 
 void processEvent() {
@@ -203,9 +215,16 @@ void setControlP5TabGlobal() {
     .getCaptionLabel().align(CENTER, CENTER)
     ;
 
-  textlabelInfo = cp5.addTextlabel("label")
+  textlabelInfo = cp5.addTextlabel("labelInfo")
     .setText(" ")
     .setPosition(4 + 128 + 24, tabHeight + 11 + 20 + 14)
+    .setFont(createFont("Lucida Sans Regular", 32))
+    .moveTo("global")
+    ;
+
+  textlabelVoltage = cp5.addTextlabel("labelVoltage")
+    .setText("0.0V")
+    .setPosition(width - 128, tabHeight + 11 + 20 + 14)
     .setFont(createFont("Lucida Sans Regular", 32))
     .moveTo("global")
     ;

@@ -1,7 +1,7 @@
 /*
  * File       Control class for Freenove Quadruped Robot
  * Author     Ethan Pan @ Freenove (support@freenove.com)
- * Date       2017/05/18
+ * Date       2018/03/27
  * Copyright  Copyright © Freenove (http://www.freenove.com)
  * License    Creative Commons Attribution ShareAlike 3.0
  *            (http://creativecommons.org/licenses/by-sa/3.0/legalcode)
@@ -91,5 +91,16 @@ class ControlRobot {
       new byte[]{Orders.requestRotateBodyTo, 
       (byte)(64 + x), 
       (byte)(64 + y)});
+  }
+
+  public float GetVoltage() {
+    byte[] inData = communication.SendCommand(new byte[]{Orders.requestSupplyVoltage});
+
+    if (inData != null) {
+      if (inData[0] == Orders.supplyVoltage) {
+        return (inData[1] * 128 + inData[2]) / 100.0;
+      }
+    }
+    return 0;
   }
 }

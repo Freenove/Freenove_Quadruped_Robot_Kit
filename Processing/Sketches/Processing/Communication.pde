@@ -1,7 +1,7 @@
 /*
- * File       Communiction class for Freenove Quadruped Robot
+ * File       Communication class for Freenove Quadruped Robot
  * Author     Ethan Pan @ Freenove (support@freenove.com)
- * Date       2017/06/24
+ * Date       2018/03/27
  * Copyright  Copyright © Freenove (http://www.freenove.com)
  * License    Creative Commons Attribution ShareAlike 3.0
  *            (http://creativecommons.org/licenses/by-sa/3.0/legalcode)
@@ -18,61 +18,44 @@ class Communication {
   }
 
   private int readTimeout = 500;
-  private final int maxSendTimes = 3;
 
-  public boolean SendCommand(byte[] outData) {
-    byte[] inData;
+  public byte[] SendCommand(byte[] outData) {
+    byte[] inData = null;
 
-    for (int i = 0; i < maxSendTimes; i++) {
-      readTimeout = 500;
-      if (isSerialAvailable) {
-        serial.clear();
-        SerialWrite(outData);
-        inData = SerialRead();
-        if (inData != null) {
-          if (inData[0] == Orders.orderDone) {
-            return true;
-          } else if (inData[0] == Orders.orderStart) {
-            WaitCommandDone();
-            return true;
-          }
-        }
-      }
-      if (isClientAvailable) {
-        client.clear();
-        ClientWrite(outData);
-        if(outData[0] == Orders.requestMoveBodyTo || outData[0] == Orders.requestRotateBodyTo)
-          return true;
-        inData = ClientRead();
-        if (inData != null) {
-          if (inData[0] == Orders.orderDone) {
-            return true;
-          } else if (inData[0] == Orders.orderStart) {
-            WaitCommandDone();
-            return true;
-          }
-        }
-      }
+    readTimeout = 500;
+    if (isSerialAvailable) {
+      serial.clear();
+      SerialWrite(outData);
+      inData = SerialRead();
+    } else if (isClientAvailable) {
+      client.clear();
+      ClientWrite(outData);
+      if (outData[0] == Orders.requestMoveBodyTo || outData[0] == Orders.requestRotateBodyTo)
+        return null;
+      inData = ClientRead();
     }
-    return false;
+    if (inData != null) {
+      if (inData[0] == Orders.orderDone) {
+      } else if (inData[0] == Orders.orderStart) {
+        WaitCommandDone();
+      }
+      return inData;
+    }
+    return null;
   }
 
   private boolean WaitCommandDone() {
-    readTimeout = 10000;
-    byte[] data;
+    byte[] inData = null;
 
+    readTimeout = 10000;
     if (isSerialAvailable) {
-      data = SerialRead();
-      if (data != null)
-        if (data[0] == Orders.orderDone)
-          return true;
+      inData = SerialRead();
+    } else if (isClientAvailable) {
+      inData = ClientRead();
     }
-    if (isClientAvailable) {
-      data = ClientRead();
-      if (data != null)
-        if (data[0] == Orders.orderDone)
-          return true;
-    }
+    if (inData != null)
+      if (inData[0] == Orders.orderDone)
+        return true;
     return false;
   }
 

@@ -1,7 +1,7 @@
 /*
- * File       Communiction orders for Freenove Quadruped Robot
+ * File       Communication orders for Freenove Quadruped Robot
  * Author     Ethan Pan @ Freenove (support@freenove.com)
- * Date       2017/05/18
+ * Date       2018/03/27
  * Copyright  Copyright © Freenove (http://www.freenove.com)
  * License    Creative Commons Attribution ShareAlike 3.0
  *            (http://creativecommons.org/licenses/by-sa/3.0/legalcode)
