@@ -1,0 +1,640 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-THC0SQQTDX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-THC0SQQTDX');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assembly &mdash; fnk0030-docs v1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Freenove/freenove-docs/docs/source/_static/css/color-roles.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Freenove/freenove-docs/docs/source/_static/css/custom.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Freenove/freenove-docs/docs/source/_static/css/navigationStyle.css" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/freenove_logo_tag_icon.png"/>
+    <link rel="canonical" href="/fnk0030/codes/tutorial/Assembly.html" />
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=76e2d817"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="https://cdn.jsdelivr.net/gh/Freenove/freenove-docs/docs/source/_static/js/custom.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Default Functions" href="Default_Functions.html" />
+    <link rel="prev" title="Processing IDE" href="Processing_IDE.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<script>
+    // window.onload = function () {
+    //     let contactUsHtml = `
+    //     <div> Need help? Contact <a href="mailto:support@freenove.com">support@freenove.com</a> </div> 
+    // `;
+    //     viewPageSourcesElements = document.getElementsByClassName("wy-breadcrumbs-aside")
+    //     console.log(document.getElementsByClassName("wy-breadcrumbs-aside"))
+    //     viewPageSourcesElements[0].innerHTML = contactUsHtml;
+    // }
+
+</script>
+<div class="extrabody-content">
+
+    <div id="navContent">
+        <div class="nav_fn">
+
+        </div>
+    </div>
+</div>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/freenove_logo_home_button.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">FNK0030</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Note.html">Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Welcome.html">Welcome</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Welcome.html#how-to-start">How to Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Welcome.html#get-support">Get Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Welcome.html#attention">Attention</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Welcome.html#about">About</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Welcome.html#copyright">Copyright</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="List.html">List</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="List.html#acrylic-parts">Acrylic Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="List.html#calibration-graph">Calibration Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="List.html#mechanical-parts">Mechanical Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="List.html#dynamic-parts">Dynamic Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="List.html#electronic-parts">Electronic Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="List.html#tools">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="List.html#required-but-not-contained-parts">Required but NOT Contained Parts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Arduino_IDE.html">Arduino IDE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Arduino_IDE.html#id1">Arduino IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Arduino_IDE.html#install-boards">Install Boards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Arduino_IDE.html#control-board">Control Board</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Arduino_IDE.html#first-use">First Use</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Processing_IDE.html">Processing IDE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Processing_IDE.html#id1">Processing IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Processing_IDE.html#first-use">First Use</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Assembly</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-01">Step 01</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-02">Step 02</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-03">Step 03</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-04">Step 04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-05">Step 05</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-06">Step 06</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-07">Step 07</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-08">Step 08</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-09">Step 09</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-10">Step 10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-11">Step 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-12">Step 12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-13">Step 13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-14">Step 14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-15">Step 15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-16">Step 16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-17">Step 17</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Default_Functions.html">Default Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Default_Functions.html#use-computer">Use Computer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Default_Functions.html#use-android-devices-or-iphone">Use Android Devices or iPhone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Default_Functions.html#use-remote">Use Remote</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Programming.html">Programming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Programming.html#modify-default-sketch">Modify Default Sketch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Programming.html#custom-programming">Custom Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Programming.html#complete-reprogramming">Complete Reprogramming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Programming.html#hardware">Hardware</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="What_s_Next.html">What’s Next?</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fnk0030-docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Assembly</li>
+      <li class="wy-breadcrumbs-aside">
+        <div id="pageHeaderContent">
+          
+        </div>
+        
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="Processing_IDE.html" class="btn btn-neutral float-left" title="Processing IDE" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Default_Functions.html" class="btn btn-neutral float-right" title="Default Functions" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="assembly">
+<h1>Assembly<a class="headerlink" href="#assembly" title="Link to this heading"></a></h1>
+<p>Now let us start assembling the robot.</p>
+<p><strong>! Please prepare the right batteries and fully charge them first. (See “AboutBattery_for_V3.pdf”)</strong></p>
+<p>Assembling without right batteries will cause installation errors, which may damage the servos.</p>
+<p><strong>! Please read and complete the previous chapters “Arduino IDE” and “Processing IDE” first.</strong></p>
+<p>In the previous chapters we showed you how to install and configure the required software.</p>
+<p><strong>! Please follow the tutorial strictly and do not skip any steps.</strong></p>
+<p>Ask our support for help if you encounter a problem instead of ignoring it.</p>
+<p><strong>! Do not open files in the original ZIP file directly.</strong></p>
+<p>After you download the ZIP file for this product, unzip it before use.</p>
+<section id="step-01">
+<h2>Step 01<a class="headerlink" href="#step-01" title="Link to this heading"></a></h2>
+<p>First, we need to upload the default sketch to the control board (Freenove Crawling Robot Controller).</p>
+<p>Libraries are collections of code that makes programming simple.</p>
+<p>The “FNQR” (Freenove Quadruped Robot) library is used to control this robot. We need to add it and other necessary libraries to Arduino IDE.</p>
+<p>Open Arduino IDE, click “ <strong>Sketch</strong> ” &gt; “ <strong>Include Library</strong> ” &gt; “ <strong>Add .ZIP Library…</strong> ” to add a library file.</p>
+<img alt="../../../_images/Assembly00.png" class="align-center" src="../../../_images/Assembly00.png" />
+<p>Add all library files in “ <strong>ArduinoLibraries</strong> ” folder. This folder is in the folder that contains this PDF tutorial.</p>
+<p>You can find the added libraries in “ <strong>Sketch</strong> ” &gt; “ <strong>Include Library</strong> ”. Make sure all the following libraries have been added.</p>
+<img alt="../../../_images/Assembly01.png" class="align-center" src="../../../_images/Assembly01.png" />
+<p>Now open “ <strong>File</strong> “ &gt; “ <strong>Examples</strong> “ &gt; “ <strong>FNQR</strong> “ &gt; “ <strong>Default</strong> “ &gt; “ <strong>Robot</strong> “.</p>
+<img alt="../../../_images/Assembly02.png" class="align-center" src="../../../_images/Assembly02.png" />
+<p>Connect the control board to your computer with a USB cable.</p>
+<p>Click “ <strong>Select Board</strong> “ &gt; “ <strong>Select other board and port…</strong> ” to select your board and port.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your port name may be different from the following figure. See previous chapter “Arduino IDE”.</p>
+</div>
+<img alt="../../../_images/Assembly03.png" class="align-center" src="../../../_images/Assembly03.png" />
+<p>Wait for uploading. It will take a few seconds.</p>
+<img alt="../../../_images/Assembly04.png" class="align-center" src="../../../_images/Assembly04.png" />
+<p>Once you see “Done uploading”, it means the upload is successful.</p>
+<img alt="../../../_images/Assembly05.png" class="align-center" src="../../../_images/Assembly05.png" />
+</section>
+<section id="step-02">
+<h2>Step 02<a class="headerlink" href="#step-02" title="Link to this heading"></a></h2>
+<p>Now we need to run a Processing sketch. It will allow us to configure the control board.</p>
+<p>We also need to add library to Processing IDE.</p>
+<p>We can add library online. Click “ <strong>Sketch</strong> ” &gt; “ <strong>Import Library…</strong> ” &gt; “ <strong>Mamage Libraries…</strong> “ to open “ <strong>Contribution Manager</strong> “.</p>
+<img alt="../../../_images/Assembly06.png" class="align-center" src="../../../_images/Assembly06.png" />
+<p>Find “ <strong>ControlP5</strong> “ in the “ <strong>Libraries</strong> “ tab, and click to select it.</p>
+<img alt="../../../_images/Assembly07.png" class="align-center" src="../../../_images/Assembly07.png" />
+<p>Then click on the “ <strong>Install</strong> ” button at the bottom right.</p>
+<img alt="../../../_images/Assembly08.png" class="align-center" src="../../../_images/Assembly08.png" />
+<p>After the installation succeeds, close “Contribution Manager” window.</p>
+<p><strong>! If you cannot complete the online installation, you can install it offline.</strong></p>
+<p>Find “controlP5.zip” in “ProcessingLibraries” folder. This folder is in the folder that contains this PDF tutorial. Then unzip it to “libraries” folder in “File” &gt; “Preferences…” &gt; “Sketchbook folder”.</p>
+<p>After library is installed, open “ <strong>Freenove_Quadruped_Robot_Kit\ProcessingApp\ProcessingApp.pde</strong> “ with Processing IDE. This file is in the folder that contains this PDF tutorial.</p>
+<img alt="../../../_images/Assembly09.png" class="align-center" src="../../../_images/Assembly09.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>Make sure you have unzipped the downloaded file.</p></li>
+<li><p>Keep the files in same folder. Do not seprate them.</p></li>
+</ol>
+</div>
+<img alt="../../../_images/Assembly10.png" class="align-center" src="../../../_images/Assembly10.png" />
+<p>Click the “Run” button, then the Processing App window appears.</p>
+<img alt="../../../_images/Assembly11.png" class="align-center" src="../../../_images/Assembly11.png" />
+<p>Now let us try it. Connect the control board to your computer via a USB cable.</p>
+<p>Select “ <strong>SERIAL</strong> “ in Processing App, then click “ <strong>CONNECT</strong> “.</p>
+<img alt="../../../_images/Assembly12.png" class="align-center" src="../../../_images/Assembly12.png" />
+<p>Wait for processing. It may take a few seconds. Do NOT click again when it’s processing.</p>
+<img alt="../../../_images/Assembly13.png" class="align-center" src="../../../_images/Assembly13.png" />
+<p>When the “CONNECT” button changes to “DISCONNECT”, it means the connection is successful.</p>
+<img alt="../../../_images/Assembly14.png" class="align-center" src="../../../_images/Assembly14.png" />
+<p><strong>! If the connection is unsuccessful, the default sketch may not have been uploaded successfully.</strong></p>
+<p>Go back to “Step 01”, upload the default sketch to the control board and then try again.</p>
+<p><span class="red">Having problems?</span> Contact us for help! Send mail to: <a class="reference external" href="mailto:support&#37;&#52;&#48;freenove&#46;com">support<span>&#64;</span>freenove<span>&#46;</span>com</a></p>
+<p>Click “ <strong>DISCONNECT</strong> “ button to disconnect.</p>
+</section>
+<section id="step-03">
+<h2>Step 03<a class="headerlink" href="#step-03" title="Link to this heading"></a></h2>
+<p>Now we will make a test and then set the control board to installation mode.</p>
+<p><strong>Take out all the servos and connect all of them to the control board</strong> (yellow wire of servo to S, red to +, black to -). Servos can be connected randomly to port 22~27 and 34~39 (do NOT connect to 28~33).</p>
+<p>(The name of the port is marked on the front of the control board.)</p>
+<img alt="../../../_images/Assembly15.png" class="align-center" src="../../../_images/Assembly15.png" />
+<p>Then install your batteries and keep power off.</p>
+<p>Connect the control board to computer via USB cable. Then open Processing App and click “ <strong>CONNECT</strong> ”.</p>
+<p>After the connection succeeds, turn on the power. The servos will rotate and then stop. The battery voltage will be displayed on the Processing App.</p>
+<img alt="../../../_images/Assembly16.png" class="align-center" src="../../../_images/Assembly16.png" />
+<p><strong>! The battery voltage should be around 8.0~8.4V.</strong></p>
+<p>If the voltage is less than 8V, please charge the batteries and then try again. If you still get the same result, maybe you have wrong batteries. Please check the type of your battery or check whether there is a protective board. Refer to “AboutBattery_for_V3.pdf” for detailed information about battery.</p>
+<p>If there is no problem with the voltage, then we need to set the control board to installation mode.</p>
+<p>Click “ <strong>INSTALLATION</strong> “ on the top. Wait for processing and the servos will rotate again.</p>
+<img alt="../../../_images/Assembly17.png" class="align-center" src="../../../_images/Assembly17.png" />
+<p>Click “ <strong>DISCONNECT</strong> ” to disconnect. The control board will restart and the servos will rotate again.</p>
+<img alt="../../../_images/Assembly18.png" class="align-center" src="../../../_images/Assembly18.png" />
+<p><strong>! The LED “L” on the control board now should flash three times at intervals.</strong></p>
+<p><strong>It is indicating that the control board is under installation mode.</strong></p>
+<p>If the LED L does not flash like this, you need to use Processing App to set the control baord again.</p>
+<p>You have to do this step correctly. Otherwise, it will cause installation errors and damage the servos.</p>
+<p>If you meet problems, check your batteries or ask our support team for help.</p>
+<p><strong>! Switch the power off, disconnect the USB cable, remove the batteries and disconnect all the servos.</strong></p>
+<p>Now let us learn about the signal LED (LED “L” on the control board), which can indicate current state of the robot. You should always observe it, which is very useful. See “SignalLED.mp4” in “Videos” folder.</p>
+<p>The signal LED will flash several times every few seconds (circularly).</p>
+<p>In each cycle, if the LED lights up several times and then stays OFF, it indicates different working mode:</p>
+<img alt="../../../_images/Assembly19.png" class="align-center" src="../../../_images/Assembly19.png" />
+<p>The working mode of the robot can be set through Processing App. The robot will remember the working mode you set, even if you restart the power, the robot will still enter the mode you set originally.</p>
+<p>In each cycle, if the LED goes off several times and then stays ON, it indicates an error state:</p>
+<p>(Only applicable to V2.0 and later versions control board.)</p>
+<img alt="../../../_images/Assembly20.png" class="align-center" src="../../../_images/Assembly20.png" />
+<p>The robot will stop all movements and cut off power of all servos when there is an error. You must troubleshoot the error before you can continue to use it.</p>
+</section>
+<section id="step-04">
+<h2>Step 04<a class="headerlink" href="#step-04" title="Link to this heading"></a></h2>
+<p>Now let us assemble the robot.</p>
+<p><strong>! Make sure the batteries are correct and the control board has been set to the installation mode.</strong></p>
+<p><strong>! Please assemble and use the robot on a smooth surface such as a desk.</strong></p>
+<p><strong>Assembling and using the robot on rough surfaces such as carpets will damage the servos.</strong></p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Place disc servo arm on the following acrylic plate.</p>
+<p>(Disc servo arm and servo are packed together.)</p>
+<p><img alt="Assembly21" src="../../../_images/Assembly21.png" /></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>The correct location is as below.</p>
+<p><img alt="Assembly22" src="../../../_images/Assembly22.png" /></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Rotate disc servo arm to align its hole with the hole on the acrylic plate.</p>
+<p><img alt="Assembly23" src="../../../_images/Assembly23.png" /></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>When all holes align:</p>
+<p><img alt="Assembly24" src="../../../_images/Assembly24.png" /></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Use the screws to fix disc servo arm to acrylic plate.</p>
+<p>If a package of M1.2*7 self-tapping screws cannot be found, it may be packed in the servo package.</p>
+<p><img alt="Assembly25" src="../../../_images/Assembly25.png" /></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Tighten the screws as below.</p>
+<p><img alt="Assembly26" src="../../../_images/Assembly26.png" /></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Use the same screws to fix other holes of disc servo arm.</p>
+<p><img alt="Assembly27" src="../../../_images/Assembly27.png" /></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Use the same size of screws to fix 3 other disc servo arms to acrylic plate.</p>
+<p><img alt="Assembly28" src="../../../_images/Assembly28.png" /></p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-05">
+<h2>Step 05<a class="headerlink" href="#step-05" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Use the same size of screws to fix 2 disc servo arms to the following acrylic plate.</p>
+<p><img alt="Assembly29" src="../../../_images/Assembly29.png" /></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Assemble 3 other acrylic plates as below.</p>
+<p><img alt="Assembly30" src="../../../_images/Assembly30.png" /></p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-06">
+<h2>Step 06<a class="headerlink" href="#step-06" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Use screws and nuts to fix servo to the following acrylic plate.</p>
+<p><img alt="Assembly31" src="../../../_images/Assembly31.png" /></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Fix them as below. Note the position of the servo shaft.</p>
+<p><img alt="Assembly32" src="../../../_images/Assembly32.png" /></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Assemble 3 other acrylic plates.</p>
+<p>Note the direction of acrylic plates. Two of them are opposite to the other two.</p>
+<p><img alt="Assembly33" src="../../../_images/Assembly33.png" /></p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-07">
+<h2>Step 07<a class="headerlink" href="#step-07" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Use screws and nuts to fix servo to the</p>
+<p>following acrylic plate.</p>
+<p><img alt="Assembly34" src="../../../_images/Assembly34.png" /></p>
+</td>
+<td><p>Fix them as below. Note the position</p>
+<p>of the servo shaft.</p>
+<p><img alt="Assembly35" src="../../../_images/Assembly35.png" /></p>
+</td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>Assemble 3 other acrylic plates.</p>
+<p>Note the direction of acrylic plates. Two of them are opposite to the other two.</p>
+<p><img alt="Assembly36" src="../../../_images/Assembly36.png" /></p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-08">
+<h2>Step 08<a class="headerlink" href="#step-08" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Use screws and nuts to fix servo to the</p>
+<p>following acrylic plate.</p>
+<p><img alt="Assembly37" src="../../../_images/Assembly37.png" /></p>
+</td>
+<td><p>Fix them as below. Note the position</p>
+<p>of the servo shaft.</p>
+<p><img alt="Assembly38" src="../../../_images/Assembly38.png" /></p>
+</td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>Assemble 3 other acrylic plates.</p>
+<p>Note the direction of acrylic plates. Two of them are opposite to the other two.</p>
+<p><img alt="Assembly39" src="../../../_images/Assembly39.png" /></p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-09">
+<h2>Step 09<a class="headerlink" href="#step-09" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Use screws and nuts to fix servo to the</p>
+<p>following acrylic plate.</p>
+<p><img alt="Assembly40" src="../../../_images/Assembly40.png" /></p>
+</td>
+<td><p>Fix them as below. Note the position</p>
+<p>of the servo shaft.</p>
+<p><img alt="Assembly41" src="../../../_images/Assembly41.png" /></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Use screws and nuts to fix servo to the</p>
+<p>following acrylic plate.</p>
+<p><img alt="Assembly42" src="../../../_images/Assembly42.png" /></p>
+</td>
+<td><p>Fix them as below. Note the position</p>
+<p>of the servo shaft.</p>
+<p><img alt="Assembly43" src="../../../_images/Assembly43.png" /></p>
+</td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p>After the assembly is completed, the following 4 components are obtained.</p>
+<p>Note that two of them are different from the other two.</p>
+<p><img alt="Assembly44" src="../../../_images/Assembly44.png" /></p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-10">
+<h2>Step 10<a class="headerlink" href="#step-10" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Use screws and brass standoffs to fix control board to the following part assembled before.</p>
+<p><img alt="Assembly45" src="../../../_images/Assembly45.png" /></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Fix them as below.</p>
+<p><img alt="Assembly46" src="../../../_images/Assembly46.png" /></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Install batteries for the control board.</p>
+<p><strong>! You have to install the right batteries that are fully charged. (Refer to “AboutBattery_for_V3.pdf”)</strong></p>
+<p>Assembling the robot without right batteries will cause installation errors and damage the servos.</p>
+<p><img alt="Assembly47" src="../../../_images/Assembly47.png" /></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Make sure the power is turned off, and then connect all servos to control board.</p>
+<p>(yellow wire of servo to S, red to +, black to -)</p>
+<p>(servos can be connected randomly to port 22~27 and 34~39, do NOT connect to 28~33)</p>
+<p>(The name of the port is marked on the front of the control board.)</p>
+<p><img alt="Assembly48" src="../../../_images/Assembly48.png" /></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span class="red">! Keep all servos connected to the control board unless they are required to disconnect.</span></p>
+</section>
+<section id="step-11">
+<h2>Step 11<a class="headerlink" href="#step-11" title="Link to this heading"></a></h2>
+<p>Turn on the power. The servos will rotate and then stop.</p>
+<p><strong>! Keep power on unless it is required to turn off.</strong></p>
+<p><strong>! The wires of servos are not shown in the future steps.</strong></p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Use screws to fix the 4 parts assembled before.</p>
+<p>Please note the installation angle of 4 parts. (Refer to the installation result at the end of this step.)</p>
+<p>! When installing, you must keep the power on and all servos connected.</p>
+<p><img alt="Assembly49" src="../../../_images/Assembly49.png" /></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Fix them as below.</p>
+<p><img alt="Assembly50" src="../../../_images/Assembly50.png" /></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>When the power is turned on, the angles of 4 parts should be as shown below.</p>
+<p>Please try to get them close to the required angle. A small deviation is acceptable.</p>
+<p>We will correct the deviation in future calibration step.</p>
+<p><img alt="Assembly51" src="../../../_images/Assembly51.png" /></p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-12">
+<h2>Step 12<a class="headerlink" href="#step-12" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Use the same sizes of screws to fix 4 parts assembled before.</p>
+<p>Please note the installation angle of 4 parts. (Refer to the installation result at the end of this step.)</p>
+<p>! When installing, except tightening the screws, you must keep the power ON and all servos connected.</p>
+<p><img alt="Assembly52" src="../../../_images/Assembly52.png" /></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>When the power is turned on, the angle of 4 parts should be shown as below.</p>
+<p>Please try to get them close to the required angle. A small deviation is acceptable.</p>
+<p>We will correct the deviation in future calibration step.</p>
+<p><img alt="Assembly53" src="../../../_images/Assembly53.png" /></p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-13">
+<h2>Step 13<a class="headerlink" href="#step-13" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Use the same sizes of screws to fix 4 parts assembled before.</p>
+<p>Please note the installation angle of 4 parts. (Refer to the installation result at the end of this step.)</p>
+<p>! When installing, except tightening the screws, you must keep the power ON and all servos connected.</p>
+<p><img alt="Assembly54" src="../../../_images/Assembly54.png" /></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>When the power is turned on, the angle of 4 parts should be shown as below.</p>
+<p>Please try to get them close to the required angle. A small deviation is acceptable.</p>
+<p>We will correct the deviation in future calibration step.</p>
+<p><img alt="Assembly55" src="../../../_images/Assembly55.png" /></p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-14">
+<h2>Step 14<a class="headerlink" href="#step-14" title="Link to this heading"></a></h2>
+<p><strong>! Turn off the power and pull off all the wires of servos.</strong></p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Then reconnect the servos to control board, the ports they should be connected to are shown below.</p>
+<p>! The view of the picture below is from the bottom of the robot (you can see the battery).</p>
+<p>! The name of the port is marked on the front of the control board.</p>
+<p><img alt="Assembly56" src="../../../_images/Assembly56.png" /></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Now, check if you have installed the servos correctly.</p>
+<p>Hold up the robot and turn on the power. Check whether the posture of the robot is close to that on the installation page of the Processing App.</p>
+<img alt="../../../_images/Assembly57.png" class="align-center" src="../../../_images/Assembly57.png" />
+<p><strong>! If there is a lot of difference, it means that the servos have not been installed correctly.</strong></p>
+<p>Please return to the “Step 1” to reinstall.</p>
+<p>If there is not much difference, turn off the power and continue.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Use cable tidy to arrange the wires of servos.</p>
+<p>Do not wrap the wires too tight, so that the servos can move freely.</p>
+<p><img alt="Assembly58" src="../../../_images/Assembly58.png" /></p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-15">
+<h2>Step 15<a class="headerlink" href="#step-15" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Use screws to fix the following acrylic plate.</p>
+<p><img alt="Assembly59" src="../../../_images/Assembly59.png" /></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Fix it as below.</p>
+<p><img alt="Assembly60" src="../../../_images/Assembly60.png" /></p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-16">
+<h2>Step 16<a class="headerlink" href="#step-16" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Fix WLAN module to control board.</p>
+<p><img alt="Assembly61" src="../../../_images/Assembly61.png" /></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Fix it as below.</p>
+<p><img alt="Assembly62" src="../../../_images/Assembly62.png" /></p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-17">
+<h2>Step 17<a class="headerlink" href="#step-17" title="Link to this heading"></a></h2>
+<p>At the end of the assembly, let us calibrate the servos.</p>
+<p>Keep the power off.</p>
+<p>Connect the robot with Processing App. After the connection succeeds, click “CALIBRATION” on the top.</p>
+<img alt="../../../_images/Assembly63.png" class="align-center" src="../../../_images/Assembly63.png" />
+<p>Turn on the power. The robot will move to the following posture, indicating it is already in calibration mode.</p>
+<p><strong>! If there is a lot of difference, it means that the servos have not been connected correctly.</strong></p>
+<p>Please return to the “Step 14” to reconnect.</p>
+<img alt="../../../_images/Assembly64.png" class="align-center" src="../../../_images/Assembly64.png" />
+<p>Put the robot on the calibration graph. The bottom of the robot should coincide with the specific outline in the graph. USB interface should also coincide with the mark in the graph.</p>
+<img alt="../../../_images/Assembly65.png" class="align-center" src="../../../_images/Assembly65.png" />
+<p>If the calibration graph is missing or damaged, you can print a copy. Print the “CalibrationGraph_for_V3.pdf” by 1:1 (100%) on A4 paper.</p>
+<p>Then start calibrate. Select “ <strong>LEG1</strong> “, and then click “ <strong>X+</strong> “, “ <strong>X-</strong> “, “ <strong>Y+</strong> “, “ <strong>Y-</strong> “ and “ <strong>Z+</strong> “, “ <strong>Z-</strong> “, until the end of Leg1 is aligned with the black dots in the graph.</p>
+<p><strong>! Please note that each click will only move the leg by 1mm, so you may need to click many times.</strong></p>
+<p>You can use keyboard to move the leg. The key is marked in brackets on the button.</p>
+<p>Then select the “ <strong>LEG2</strong> “, “ <strong>LEG3</strong> “ and “ <strong>LEG4</strong> “ to move other legs to corresponding dots as shown below.</p>
+<img alt="../../../_images/Assembly66.png" class="align-center" src="../../../_images/Assembly66.png" />
+<p>Click “ <strong>CONFIRM</strong> “ and the calibration data will be stored in the robot.</p>
+<p>Click “ <strong>VERIFY</strong> “, and then the robot will restore to the state before calibration. Then converted to the state after calibration, which indicates that the calibration is completed. If the end of legs is not aligned with the dots, click “ <strong>RESET</strong> ” and restart from moving the legs to try again.</p>
+<p>The calibration needs to be executed only once. Its data is stored in EEPROM. It will not be changed if you upload the default sketch again. If you disassemble the robot, replace the servo or control board, you need to calibrate the robot again. If you are not satisfied with the results of the latest calibration, you can also choose to calibrate again.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+  <a href="Processing_IDE.html" class="btn btn-neutral float-left" title="Processing IDE" accesskey="p"
+    rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+  <a href="Default_Functions.html" class="btn btn-neutral float-right" title="Default Functions" accesskey="n"
+    rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+</div>
+<br>
+<div id="footer_content">
+
+</div>
+
+
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

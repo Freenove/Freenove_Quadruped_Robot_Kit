@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-THC0SQQTDX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-THC0SQQTDX');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arduino IDE &mdash; fnk0030-docs v1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Freenove/freenove-docs/docs/source/_static/css/color-roles.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Freenove/freenove-docs/docs/source/_static/css/custom.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Freenove/freenove-docs/docs/source/_static/css/navigationStyle.css" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/freenove_logo_tag_icon.png"/>
+    <link rel="canonical" href="/fnk0030/codes/tutorial/Arduino_IDE.html" />
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=76e2d817"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="https://cdn.jsdelivr.net/gh/Freenove/freenove-docs/docs/source/_static/js/custom.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Processing IDE" href="Processing_IDE.html" />
+    <link rel="prev" title="Preface" href="Preface.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<script>
+    // window.onload = function () {
+    //     let contactUsHtml = `
+    //     <div> Need help? Contact <a href="mailto:support@freenove.com">support@freenove.com</a> </div> 
+    // `;
+    //     viewPageSourcesElements = document.getElementsByClassName("wy-breadcrumbs-aside")
+    //     console.log(document.getElementsByClassName("wy-breadcrumbs-aside"))
+    //     viewPageSourcesElements[0].innerHTML = contactUsHtml;
+    // }
+
+</script>
+<div class="extrabody-content">
+
+    <div id="navContent">
+        <div class="nav_fn">
+
+        </div>
+    </div>
+</div>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/freenove_logo_home_button.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">FNK0030</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Note.html">Note</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Welcome.html">Welcome</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Welcome.html#how-to-start">How to Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Welcome.html#get-support">Get Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Welcome.html#attention">Attention</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Welcome.html#about">About</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Welcome.html#copyright">Copyright</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="List.html">List</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="List.html#acrylic-parts">Acrylic Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="List.html#calibration-graph">Calibration Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="List.html#mechanical-parts">Mechanical Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="List.html#dynamic-parts">Dynamic Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="List.html#electronic-parts">Electronic Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="List.html#tools">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="List.html#required-but-not-contained-parts">Required but NOT Contained Parts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Preface.html">Preface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Arduino IDE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Arduino IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-boards">Install Boards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#control-board">Control Board</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#first-use">First Use</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Processing_IDE.html">Processing IDE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Processing_IDE.html#id1">Processing IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Processing_IDE.html#first-use">First Use</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Assembly.html">Assembly</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Assembly.html#step-01">Step 01</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Assembly.html#step-02">Step 02</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Assembly.html#step-03">Step 03</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Assembly.html#step-04">Step 04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Assembly.html#step-05">Step 05</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Assembly.html#step-06">Step 06</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Assembly.html#step-07">Step 07</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Assembly.html#step-08">Step 08</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Assembly.html#step-09">Step 09</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Assembly.html#step-10">Step 10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Assembly.html#step-11">Step 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Assembly.html#step-12">Step 12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Assembly.html#step-13">Step 13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Assembly.html#step-14">Step 14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Assembly.html#step-15">Step 15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Assembly.html#step-16">Step 16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Assembly.html#step-17">Step 17</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Default_Functions.html">Default Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Default_Functions.html#use-computer">Use Computer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Default_Functions.html#use-android-devices-or-iphone">Use Android Devices or iPhone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Default_Functions.html#use-remote">Use Remote</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Programming.html">Programming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Programming.html#modify-default-sketch">Modify Default Sketch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Programming.html#custom-programming">Custom Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Programming.html#complete-reprogramming">Complete Reprogramming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Programming.html#hardware">Hardware</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="What_s_Next.html">What’s Next?</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fnk0030-docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Arduino IDE</li>
+      <li class="wy-breadcrumbs-aside">
+        <div id="pageHeaderContent">
+          
+        </div>
+        
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="Preface.html" class="btn btn-neutral float-left" title="Preface" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Processing_IDE.html" class="btn btn-neutral float-right" title="Processing IDE" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="arduino-ide">
+<h1>Arduino IDE<a class="headerlink" href="#arduino-ide" title="Link to this heading"></a></h1>
+<p>! Please do NOT skip this chapter even if you have already installed the Arduino IDE.</p>
+<p>The control board of the robot is compatible with Arduino IDE. The Arduino IDE is free and open source. We will use it to write and upload code to the control board.</p>
+<section id="id1">
+<h2>Arduino IDE<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>Arduino IDE uses C/C++ programming language. Please visit <a class="reference external" href="https://www.arduino.cc/reference/en/">https://www.arduino.cc/reference/en/</a> for details.</p>
+<p>If you want to learn it easily, please visit <a class="reference external" href="http://www.freenove.com">http://www.freenove.com</a> for kits designed for starters.</p>
+<p><strong>! If you have already installed an earlier version, we recommend uninstalling it before continuing.</strong></p>
+<p>First, install Arduino IDE. Visit <a class="reference external" href="https://www.arduino.cc/en/software">https://www.arduino.cc/en/software</a>. Then select and download corresponding installer according to your operating system.</p>
+<img alt="../../../_images/Arduino00.png" class="align-center" src="../../../_images/Arduino00.png" />
+<p>We will explain in the Windows version. The other versions are similar.</p>
+<p>Download and complete the installation, an shortcut will be added to your computer’s desktop.</p>
+<img alt="../../../_images/Arduino01.png" class="align-center" src="../../../_images/Arduino01.png" />
+<p>Run the Arduino IDE, the interface of it is as follows:</p>
+<img alt="../../../_images/Arduino02.png" class="align-center" src="../../../_images/Arduino02.png" />
+<p>Programs written using Arduino IDE are called sketches and are saved with the file extension.ino.</p>
+<p>Please visit <a class="reference external" href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2">https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2</a> for more details.</p>
+</section>
+<section id="install-boards">
+<h2>Install Boards<a class="headerlink" href="#install-boards" title="Link to this heading"></a></h2>
+<p>Check if “Arduino AVR Boards“ have been installed. It may be automatically installed when the Arduino IDE is first opened. If it is not installed, click ”Install“ to install it.</p>
+<img alt="../../../_images/Arduino03.png" class="align-center" src="../../../_images/Arduino03.png" />
+</section>
+<section id="control-board">
+<h2>Control Board<a class="headerlink" href="#control-board" title="Link to this heading"></a></h2>
+<p>The control board of the robot (Freenove Crawling Robot Controller) is used to drive this robot.</p>
+<p>It can connect 18 servos, a WLAN module and a wireless module. There are also some IO and power ports for your use.</p>
+<img alt="../../../_images/Arduino04.png" class="align-center" src="../../../_images/Arduino04.png" />
+</section>
+<section id="first-use">
+<h2>First Use<a class="headerlink" href="#first-use" title="Link to this heading"></a></h2>
+<p>Open the example sketch “Blink”.</p>
+<img alt="../../../_images/Arduino05.png" class="align-center" src="../../../_images/Arduino05.png" />
+<p>Click “Select Board” &gt; “Select other board and port…”.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There may be one or more devices displayed here, ignore them.</p>
+</div>
+<img alt="../../../_images/Arduino06.png" class="align-center" src="../../../_images/Arduino06.png" />
+<p>Connect the control board to your computer with a USB cable.</p>
+<img alt="../../../_images/Arduino07.png" class="align-center" src="../../../_images/Arduino07.png" />
+<p>A new device (port) will appear in the PORTS list on the right, click to select it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your port name may be different from the following figure, especially on other computer systems.</p>
+</div>
+<img alt="../../../_images/Arduino08.png" class="align-center" src="../../../_images/Arduino08.png" />
+<p><span class="red">Can’t find the port?</span> You may need to install the driver. Please see folder “Drivers”.</p>
+<p><strong>This “Drivers” folder is in the folder that contains this PDF tutorial.</strong></p>
+<p>Find <strong>“Arduino Mega or Mega 2560”</strong> in the BOARDS list on the left and click to select it. Then click “OK”.</p>
+<img alt="../../../_images/Arduino09.png" class="align-center" src="../../../_images/Arduino09.png" />
+<p>Click the “Verify” button.</p>
+<img alt="../../../_images/Arduino10.png" class="align-center" src="../../../_images/Arduino10.png" />
+<p>Figure below shows the code is being compiled.</p>
+<img alt="../../../_images/Arduino11.png" class="align-center" src="../../../_images/Arduino11.png" />
+<p>Wait a moment for the compiling to be completed. Figure below shows the code size and percentage of space occupation. If there is any error in the code, the compilation will fail and the details will be shown here.</p>
+<img alt="../../../_images/Arduino12.png" class="align-center" src="../../../_images/Arduino12.png" />
+<p>Click the “Upload” button.</p>
+<img alt="../../../_images/Arduino13.png" class="align-center" src="../../../_images/Arduino13.png" />
+<p>Figure below shows the code is being uploaded.</p>
+<img alt="../../../_images/Arduino14.png" class="align-center" src="../../../_images/Arduino14.png" />
+<p>Wait a moment for the uploading to be completed.</p>
+<p>Usually, you can directly click the “Upload” button, the compilation will automatically proceed first.</p>
+<img alt="../../../_images/Arduino15.png" class="align-center" src="../../../_images/Arduino15.png" />
+<p><span class="red">Having problems?</span> Contact us for help! Send mail to: <a class="reference external" href="mailto:support&#37;&#52;&#48;freenove&#46;com">support<span>&#64;</span>freenove<span>&#46;</span>com</a></p>
+<p>We will see the LED marked with “L” on the control board starts blinking. It indicates that the code is running!</p>
+<img alt="../../../_images/Arduino16.png" class="align-center" src="../../../_images/Arduino16.png" />
+<p>So far, we have completed the first use. I believe you have felt the joy of it.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+  <a href="Preface.html" class="btn btn-neutral float-left" title="Preface" accesskey="p"
+    rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+  <a href="Processing_IDE.html" class="btn btn-neutral float-right" title="Processing IDE" accesskey="n"
+    rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+</div>
+<br>
+<div id="footer_content">
+
+</div>
+
+
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
