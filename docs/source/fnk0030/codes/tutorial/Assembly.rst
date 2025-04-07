@@ -55,6 +55,11 @@ Click “ **Select Board** " > " **Select other board and port...** ” to selec
 .. image:: ../_static/imgs/Assembly/Assembly03.png
     :align: center
 
+Then click the “ **Upload** ” button to upload the sketch to the control board.
+
+.. image:: ../_static/imgs/Assembly/Assembly67.png
+    :align: center
+
 Wait for uploading. It will take a few seconds.
 
 .. image:: ../_static/imgs/Assembly/Assembly04.png
